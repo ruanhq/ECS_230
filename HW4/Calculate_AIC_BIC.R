@@ -1,0 +1,12 @@
+##Calculate BIC HW4:
+library(MASS)
+x<-c(0.5,0.2,1.2,2.9,3.4,2.4,4.4,4.5,4.9,3.3)
+y<-c(3.4,3.7,5.5,7.3,7.9,5.9,8.1,7.9,7.9,6.6)
+design_for_three<-matrix(c(rep(1,10),x,x^2,x^3),10,4)
+design_for_five<-matrix(c(rep(1,10),x,x^2,x^3,x^4,x^5),10,6)
+model3<-lm(y~design_for_three)
+model5<-lm(y~design_for_five)
+BIC(model3)
+BIC(model5)
+AIC(model3)
+AIC(model5)
